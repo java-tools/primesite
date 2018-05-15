@@ -1,0 +1,82 @@
+---
+layout:  changelog
+release: 3.5.3
+
+changelog:
+  defects:
+   - num: 4641
+     txt: "JavaScript does not updates ViewState after AJAX call in portlet environment"
+   - num: 4793
+     txt: "MenuItem's href=\"javascript:void\" causing problems in IE"
+   - num: 4920
+     txt: "Hidden Container Support for Panel and Fieldset"
+   - num: 5189
+     txt: "TieredMenu actions in overlay mode doesn't work for IE8."
+   - num: 5254
+     txt: "Sorting state get lost in combination with filtering"
+   - num: 5286
+     txt: "SelectOneMenu widgetVar.focus() not working"
+   - num: 5407
+     txt: "FocusRenderer dead code"
+   - num: 5421
+     txt: " stepfactor on spinner in 3.5.2 does not work on integers"
+   - num: 5442
+     txt: "Improve Multipart Request Exception Handling"
+   - num: 5443
+     txt: "Tooltip for Attribute should not be required"
+   - num: 5444
+     txt: "FeedReader size attribute should not be required"
+   - num: 5456
+     txt: "Select All Checkbox not reseting on filtering for DataTable component"
+   - num: 5458
+     txt: "\"Select all checkbox\" is not synced with row toggle select"
+   - num: 5473
+     txt: "TabView - TabChangeEvent doesn't render contents with dynamic data"
+   - num: 5497
+     txt: "Wrong return type in FileUploadHandler"
+   - num: 5500
+     txt: "Checking a checkbox causes layout change"
+   - num: 5512
+     txt: "SelectOneMenu filter shows wrong items when using up and down keys"
+   - num: 5515
+     txt: "MenuItems of SplitButton do not support Outcomes"
+
+  enhancements:
+   - num: 3534
+     txt: "Problem with components that slide out from overlayPanel"
+   - num: 5433
+     txt: "p:message option for no colon \":\" in message"
+   - num: 5434
+     txt: "Pass event object to the Tree's onNodeClick handler"
+   - num: 5499
+     txt: "Wrong CSS cursor in SelectOneMenu custom content items"
+
+  new_features:
+   - num: 3229
+     txt: "No result found message for autocomplete"
+   - num: 3757
+     txt: "Autocomplete enhancement: cached list for dropdown"
+   - num: 4416
+     txt: "Emptymessage attribute for treeTable component"
+   - num: 4612
+     txt: "emptyMessage feature for DataList"
+   - num: 5431
+     txt: "add focus attribute to p:dialog"
+   - num: 5509
+     txt: "Dialog should sync visible state with model"
+   - num: 5510
+     txt: "Dismissable and ShowCloseIcon features for OverlayPanel"
+   - num: 5511
+     txt: "SelectOneMenu filter key events"
+   - num: 5516
+     txt: "SelectOneMenu Filter Input should receive focus on show."
+   - num: 5517
+     txt: "SelectOneMenu should select highlighted item on Tab Key"
+---
+
+<p>Here is the full changelog of what {{page.release}} brings, there are <strong>32 filed improvements</strong> and one required special attention.</p>
+
+<h4>Major Defect in DataTable Sorting and Filtering</h4>
+
+<p>It was identified an important defect with datatable sorting in combination with filtering where applying a filter causes sorting stated to be lost leading to a visual sort indicator and an unsorted data. This issue has been filed at 5254 and fixed for this release.</p>
+

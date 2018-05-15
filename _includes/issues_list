@@ -1,0 +1,26 @@
+{% if issues_list %}
+<h4>
+  {{ issues_head }}
+  <small>({{ issues_list | size }})</small>
+</h4>
+
+<ul>
+{% for issue in issues_list %}
+  <li>
+    {% if issue.num > 0 %}
+      {% assign issue_tracker = site.issue_tracker %}
+      {% assign issue_num = issue.num %}
+    {% else if issue.num < 0 %}
+      {% assign issue_tracker = site.github_issue_tracker %}
+      {% assign issue_num = issue.num | times:-1 %}
+    {% endif %}
+    {% if issue.num != 0 %}
+      <a href="{{ issue_tracker }}{{ issue_num }}">Issue {{ issue_num }}</a>
+    {% endif %}
+    {{ issue.txt }}
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% assign issues_head = nil %}
+{% assign issues_list = nil %}

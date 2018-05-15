@@ -1,0 +1,26 @@
+---
+layout: default
+title: Workaround for widgetVar undefined
+prettify: true
+---
+
+<h3>Workaround for widgetVar undefined</h3>
+
+<p>The feature <a href="{{ site.issue_tracker }}5850">5850</a> changed widgetVar's scope,
+removing them from window to <strong>new function</strong> <code>PF('widgetVar')</code>.</p>
+
+<pre class="prettyprint lang-js">
+// instead
+myWigetVar.samplemethod();
+
+// use
+PF('myWidgetVar').samplemethod();
+
+// or
+var myWidgetVar = PF('myWidgetVar');
+myWigetVar.samplemethod();
+</pre>
+
+<p>It's a feature that ended up coming down from upstream version not intentionally. Therefore,
+it will be removed in the <strong>3.5.11-UR</strong> release.</p>
+
